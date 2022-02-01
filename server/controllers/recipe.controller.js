@@ -1,42 +1,47 @@
-
 const { response, request } = require('express');
-const { Product } = require('../models/product.model');
+const { Recipe } = require('../models/recipe.model');
 
-// create new product
-module.exports.createProduct = (req, res) => {
-    const { productName, productPrice, productDescription } = req.body;
-    Product.create({
-        productName,
-        productPrice,
-        productDescription,
+// create new recipe
+module.exports.createRecipe = (req, res) => {
+    const { recipeName, recipeDescription, recipeIngredients, recipeInstructions, carbCount, proteinCount, fatCount, recipeLikes, recipeURL } = req.body;
+    Recipe.create({
+        recipeName,
+        recipeDescription,
+        recipeIngredients,
+        recipeInstructions,
+        carbCount,
+        proteinCount,
+        fatCount,
+        recipeLikes,
+        recipeURL,
     })
-        .then(product => res.json(product))
+        .then(recipe => res.json(recipe))
         .catch(err => res.json(err));
 }
 
-// get all products
-module.exports.getAllProducts = (req, res) => {
-    Product.find({})
-        .then(products => res.json(products))
+// get all recipes
+module.exports.getAllRecipes = (req, res) => {
+    Recipe.find({})
+        .then(recipes => res.json(recipes))
         .catch(err => res.json(err));
 }
 
-// get One product
-module.exports.getProduct = (req, res) => {
-    Product.findOne({_id:req.params.id})
-        .then(product => res.json(product))
+// get One recipe
+module.exports.getRecipe = (req, res) => {
+    Recipe.findOne({_id:req.params._id})
+        .then(recipe => res.json(recipe))
         .catch(err => res.json(err))
 }
 
-// update one product
-module.exports.updateProduct = (req, res) => {
-    Product.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
-        .then(updatedProduct => res.json(updatedProduct))
+// update one recipe
+module.exports.updateRecipe = (req, res) => {
+    Recipe.findOneAndUpdate({_id: req.params._id}, req.body, {new:true})
+        .then(updatedRecipe => res.json(updatedRecipe))
         .catch(err => res.json(err))
 }
 
-module.exports.deleteProduct = (req, res) => {
-    Product.deleteOne({ _id: req.params.id })
+module.exports.deleteRecipe = (req, res) => {
+    Recipe.deleteOne({ _id: req.params._id })
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch (err => res.json(err));
 }
