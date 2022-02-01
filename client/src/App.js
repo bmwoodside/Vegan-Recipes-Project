@@ -9,8 +9,8 @@ import Nav from './views/Nav';
 function App() {
   return (
     <BrowserRouter>
-    <Nav />
-      
+      <Nav />
+
       <Route exact path="/">
         <Main />
       </Route>
