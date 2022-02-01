@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Main from './views/Main';
+import RecipeForm from './components/RecipeForm';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       </Route>
 
       <Route exact path="/recipes/create">
-      <h1>View all recipes here</h1>
+        <RecipeForm />
       </Route>
 
       <Route exact path="/recipes/:_id">
