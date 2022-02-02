@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Link, useHistory } from "react-router-dom"
 import { useState } from "react";
+import e from 'express';
 
 const RecipeForm = (props) => {
     const [form, setForm] = useState({
@@ -12,8 +13,9 @@ const RecipeForm = (props) => {
         fatCount: 1,
         recipeLikes: 0,
         recipeURL: "",
+        recipeIngredients: [],
     })
-
+    const [tempIngredient, setTempIngredient] = useState("");
     const [nameError, setNameError] = useState("");
     const [descriptionError, setDescriptionError] = useState("");
     const [instructionsError, setInstructionsError] = useState("");
@@ -115,6 +117,11 @@ const RecipeForm = (props) => {
 
 
 
+                    <div className="create-recipe-ingredients">
+                        <input type="text" name="recipeIngredients" id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} />
+                        <button >Add Ingredient</button>
+                    </div>
+                    
 
                 </div>
 
