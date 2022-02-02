@@ -22,12 +22,11 @@ function App() {
       </Route>
 
       <Route exact path="/recipes/viewall">
-        <h1>view all page</h1>
         <ViewAllRecipes/>
       </Route>
 
       <Route exact path="/recipes/:_id">
-      <h1>View one recipe here</h1>
+      {/* <h1>View one recipe here</h1> */}
       </Route>
 
     </BrowserRouter>

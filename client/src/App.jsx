@@ -9,7 +9,7 @@ import RecipeForm from './components/RecipeForm';
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
+      {/* <Nav /> */}
       <Route exact path="/">
         <Main />
       </Route>
