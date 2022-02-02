@@ -11,9 +11,20 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
-
 }
+
+.recipe{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightgrey;
+  border: 2px solid gray;
+  margin: 5px;
+}
+
+
 
 
 .linkText{
