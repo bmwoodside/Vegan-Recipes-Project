@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Link, useHistory } from "react-router-dom"
 import { useState } from "react";
-import e from 'express';
+
 
 const RecipeForm = (props) => {
     const [form, setForm] = useState({
@@ -19,7 +19,7 @@ const RecipeForm = (props) => {
     const [nameError, setNameError] = useState("");
     const [descriptionError, setDescriptionError] = useState("");
     const [instructionsError, setInstructionsError] = useState("");
-    
+
     const history = useHistory();
 
     const onChangeHandler = (e) => {
@@ -45,70 +45,74 @@ const RecipeForm = (props) => {
 
     return (
         <div>
-            <form onSubmit={onSubmitHandler} className="recipeForm">
+            {/* <div>
                 <h1>Add a new recipe:</h1>
+            </div> */}
+
+            <form onSubmit={onSubmitHandler} className="recipeForm">
+
 
                 <div className="form-col-input-left">
                     <div className="create-name">
-                        <label htmlFor='recipeName'>
-                            <p>Name: </p>
+                        <label htmlFor='recipeName' >
+                            <p className='create-labels'>Name: </p>
                             {
                                 nameError
-                                ? <p style={{ color: "red" }}>{ nameError }</p>
-                                : null
+                                    ? <p className='errors'>{nameError}</p>
+                                    : null
                             }
-                            <input type="text" name='recipeName' onChange={(e) => {onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError("");}} />
+                            <input type="text" name='recipeName' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} />
                         </label>
                     </div>
-                    
+
                     <div className="create-description">
                         <label htmlFor="recipeDescription">
-                            <p>Description:</p>
+                            <p className='create-labels'>Description:</p>
                             {
                                 descriptionError
-                                ? <p style={{ color: "red" }}>{ descriptionError }</p>
-                                : null
+                                    ? <p style={{ color: "red" }}>{descriptionError}</p>
+                                    : null
                             }
-                            <textarea name='recipeDescription' onChange={(e) => {onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError("");}} />
+                            <textarea name='recipeDescription'  className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError(""); }} />
                         </label>
                     </div>
 
                     <div className="create-instructions">
                         <label htmlFor="recipeInstructions">
-                            <p>Instructions:</p>
+                            <p className='create-labels'>Instructions:</p>
                             {
                                 instructionsError
-                                ? <p style={{ color: "red" }}>{ instructionsError }</p>
-                                : null
+                                    ? <p style={{ color: "red" }}>{instructionsError}</p>
+                                    : null
                             }
-                            <textarea name='recipeInstructions' onChange={(e) => {onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError("");}} />
+                            <textarea name='recipeInstructions' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }} />
                         </label>
                     </div>
 
                     <div className="create-macro-counts">
                         <div className="carbCount">
-                            <p>Carbs (g):</p>
-                            <input type="number" name="carbCount" id="carbCount" onChange={(e) => {onChangeHandler(e);}} value={form.carbCount} min='1' />
+                            <p className='create-labels'>Carbs (g):</p>
+                            <input type="number" name="carbCount" id="carbCount" onChange={(e) => { onChangeHandler(e); }} value={form.carbCount} min='1' />
                         </div>
                         <div className="proteinCount">
-                            <p>Protein (g):</p>
-                            <input type="number" name="proteinCount" id="proteinCount" onChange={(e) => {onChangeHandler(e);}} value={form.proteinCount} min='1' />
+                            <p className='create-labels'> Protein (g):</p>
+                            <input type="number" name="proteinCount" id="proteinCount"   onChange={(e) => { onChangeHandler(e); }} value={form.proteinCount} min='1' />
                         </div>
                         <div className="fatCount">
-                            <p>Fat (g):</p>
-                            <input type="number" name="fatCount" id="fatCount" onChange={(e) => {onChangeHandler(e);}} value={form.fatCount} min='1'/>
+                            <p className='create-labels'>Fat (g):</p>
+                            <input type="number" name="fatCount" id="fatCount"  onChange={(e) => { onChangeHandler(e); }} value={form.fatCount} min='1' />
                         </div>
                     </div>
 
                     <div className="create-recipeURL">
                         <label htmlFor='recipeURL'>
-                            <p>Link to a picture! (optional):</p>
-                            <input type="text" name="recipeURL" id="recipeURL" onChange={(e) => onChangeHandler(e)} />
+                            <p className='create-labels'>Link to a picture! (optional):</p>
+                            <input type="text" name="recipeURL" className='input-label' id="recipeURL" onChange={(e) => onChangeHandler(e)} />
                         </label>
                     </div>
-                    
 
-                    <button className='btn btn-primary'>Submit Recipe!</button>
+
+                    <button className='createBtn'>Submit Recipe!</button>
                 </div>
 
                 <div className="form-col-input-right">

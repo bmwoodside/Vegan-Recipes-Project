@@ -15,21 +15,21 @@ function App() {
       <Nav />
       <Switch>
 
-      <Route exact path="/">
-        <Main />
-      </Route>
+        <Route exact path="/">
+          <Main />
+        </Route>
 
-      <Route exact path="/recipes/create">
-        <RecipeForm />
-      </Route>
+        <Route exact path="/recipes/create">
+          <RecipeForm />
+        </Route>
 
-      <Route exact path="/recipes/viewall">
-        <ViewAllRecipes/>
-      </Route>
+        <Route exact path="/recipes/viewall">
+          <ViewAllRecipes />
+        </Route>
 
-      <Route exact path="/recipes/:_id">
-      <ViewOne/>
-      </Route>
+        <Route exact path="/recipes/:_id">
+          <ViewOne />
+        </Route>
 
       </Switch>
 
