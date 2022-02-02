@@ -6,7 +6,7 @@ const Nav = (props) => {
 
     return (
         <div className='nav'>
-            <img src={ProNature} className='logo-app' alt="logowtf" />
+            {/* <img src={ProNature} className='logo-app' alt="logowtf" /> */}
             <div className='links'>
                 <Link to={"/"} className='linkText'>Home</Link>
                 <Link to={"/recipes/create"} className='linkText'>Create</Link>

@@ -6,12 +6,14 @@ import Main from './views/Main';
 import Nav from './views/Nav';
 import RecipeForm from './components/RecipeForm';
 import ViewAllRecipes from "./views/ViewAllRecipes";
+import ViewOne from "./views/ViewOne";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
+      <Switch>
 
       <Route exact path="/">
         <Main />
@@ -26,8 +28,11 @@ function App() {
       </Route>
 
       <Route exact path="/recipes/:_id">
-      {/* <h1>View one recipe here</h1> */}
+      <ViewOne/>
       </Route>
+
+      </Switch>
+
 
     </BrowserRouter>
   );

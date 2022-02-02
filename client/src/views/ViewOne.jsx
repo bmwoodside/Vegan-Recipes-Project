@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -12,7 +12,7 @@ const ViewOne = (props) => {
         axios.get(`http://localhost:8000/api/recipes/${_id}`)
         .then(res => {
             console.log(res);
-            setView(res.data.results)
+            setView(res.data)
         })
         .catch(err => console.log(err));
     }, [_id])
@@ -36,5 +36,5 @@ const ViewOne = (props) => {
 }
 
 
-export default View;
+export default ViewOne;
 
