@@ -20,6 +20,11 @@ function App() {
         <RecipeForm />
       </Route>
 
+      <Route exact path="/recipes/create">
+        
+      </Route>
+
+
     </BrowserRouter>
   );
 }
