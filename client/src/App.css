@@ -7,17 +7,17 @@ html, body {
   height:100%;
 }
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #107050, #32d6a5cc, #2a8bdab6, #043d6bb6);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 120s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+      background-position: 0% 100%;
   }
   50% {
-      background-position: 100% 50%;
+      background-position: 100% 100%;
   }
   100% {
       background-position: 0% 50%;
@@ -25,13 +25,17 @@ body {
 }
 
 .nav{
-  height: 70px;
+  height: 50px;
   width: 100%;
   border-radius:  0px 0px 25px 25px;
-  background: linear-gradient(135deg, #68d4ff 10%, rgb(36, 60, 129) 90%);
+  background: linear-gradient(135deg, #68d4ff7c 10%, rgba(36, 59, 129, 0.486) 90%);
+  /* background-size: 1000% 1000%;
+  animation: gradient 30s ease infinite; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 15px;
+
 }
 
 .recipe{
@@ -60,8 +64,82 @@ body {
 }
 
 .linkText:hover{
-  color:rgb(120,144,169)
+  color:rgb(197, 209, 221)
 
 }
 
+/* create recipe */
 
+.recipeForm{
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight:500;
+  color:white;
+  text-shadow: 2px 2px 2px #1401017e;
+  align-items: center;
+}
+
+
+.create-labels{
+  margin-bottom: 5px;
+}
+
+
+.input-label{
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+}
+
+#carbCount{
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+}
+#proteinCount{
+  width: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+}
+#fatCount{
+  width: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+}
+
+
+.createBtn{
+  background: linear-gradient(-45deg, #195f362f, #32d6a534);
+  border-radius: 5px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.308) 3px 3px 7px;
+  padding: 5px;
+}
+
+
+.error{
+  color: red;
+}
+
+#navbottom{
+  background-color: #5a91c581;
+  min-height: 25px;
+  width: 100%; 
+  bottom: 0px;
+  position: fixed;
+  border-radius:  15px 15px 0px 0px;
+}
