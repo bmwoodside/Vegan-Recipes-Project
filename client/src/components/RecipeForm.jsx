@@ -33,21 +33,28 @@ const RecipeForm = (props) => {
         e.preventDefault();
 
         // only make axios call if fields meet validations
-        form.recipeName.length >= 3 && form.recipeDescription.length >= 3 && form.recipeInstructions.length >= 3
+        form.recipeName.length >= 3 && form.recipeDescription.length >= 3 && form.recipeInstructions.length >= 3 && form.recipeIngredients.length >= 1
             ? axios.post('http://localhost:8000/api/recipes/create', form)
                 .then(res => {
                     // TODO: send route to show-all page instead of main.
-                    history.push("/")
+                    history.push("/recipes/viewall")
                 })
                 .catch(err => console.log(err))
             : console.log("validations not met...")
     }
 
+    const handleAddIngredient = (e) => {
+        e.preventDefault();
+        
+        setForm({
+            ...form,
+            [form.recipeIngredients]: form.recipeIngredients.push(tempIngredient)
+        })
+        setTempIngredient("");
+    }
+
     return (
         <div>
-            {/* <div>
-                <h1>Add a new recipe:</h1>
-            </div> */}
 
             <form onSubmit={onSubmitHandler} className="recipeForm">
 
@@ -116,14 +123,17 @@ const RecipeForm = (props) => {
                 </div>
 
                 <div className="form-col-input-right">
-                    <h3>Ingredients:</h3>
+                    <h3 id='create-recipe-ingredients-header'>Ingredients:</h3>
 
-
-
+                    <ul>
+                        {form.recipeIngredients.map((ingredient, i) =>
+                            <li key={i}>{ingredient}</li>
+                        )}
+                    </ul>
 
                     <div className="create-recipe-ingredients">
-                        <input type="text" name="recipeIngredients" id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} />
-                        <button >Add Ingredient</button>
+                        <input type="text" name="recipeIngredients" id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
+                        <button onClick={handleAddIngredient}>Add Ingredient</button>
                     </div>
                     
 
