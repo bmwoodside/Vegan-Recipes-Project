@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 
 
-const Main = (props) => {
+const ViewAllRecipes = (props) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(()=>{
@@ -22,7 +22,7 @@ const Main = (props) => {
             <Link to="/recipes/create" className='mb-5 btn btn-lg btn-success'>Add a recipe </Link>
 
             {
-                authors.map((item, i) => {
+                recipes.map((item, i) => {
                     return (
                     <div className="w-75 mx-auto">
                         <div className='recipe'>
@@ -39,4 +39,4 @@ const Main = (props) => {
     );
 }
 
-export default Main;
+export default ViewAllRecipes;
