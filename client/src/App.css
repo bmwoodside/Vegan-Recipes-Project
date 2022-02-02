@@ -25,7 +25,7 @@ body {
 }
 
 .nav{
-  height: 70px;
+  height: 50px;
   width: 100%;
   border-radius:  0px 0px 25px 25px;
   background: linear-gradient(135deg, #68d4ff7c 10%, rgba(36, 59, 129, 0.486) 90%);
@@ -34,6 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 15px;
 
 }
 
@@ -76,12 +77,14 @@ body {
   font-weight:500;
   color:white;
   text-shadow: 2px 2px 2px #1401017e;
+  align-items: center;
 }
 
 
 .create-labels{
   margin-bottom: 5px;
 }
+
 
 .input-label{
   margin-bottom: 20px;
@@ -130,4 +133,13 @@ body {
 
 .error{
   color: red;
+}
+
+#navbottom{
+  background-color: #5a91c581;
+  min-height: 25px;
+  width: 100%; 
+  bottom: 0px;
+  position: fixed;
+  border-radius:  15px 15px 0px 0px;
 }
