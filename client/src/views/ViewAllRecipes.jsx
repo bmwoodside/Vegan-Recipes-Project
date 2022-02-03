@@ -24,12 +24,12 @@ const ViewAllRecipes = (props) => {
             {
                 recipes.map((item, i) => {
                     return (
-                    <div className="w-75 mx-auto recipe">
+                    <div className=" mx-auto recipe">
                             <img src={item.recipeURL} alt={item.recipeURL}></img>
                             <h3>{item.recipeName}</h3>
                             <p>Number of Likes: {item.recipeLikes}</p>
                             <p>{item.recipeDescription}</p>
-                            <p><Link to={`/recipes/${item._id}`} className='btn btn-primary btn-lg'>View Recipe</Link></p>
+                            <Link to={`/recipes/${item._id}`} className='btn btn-primary btn-lg'>View Recipe</Link>
                     </div>
                     )
                 })
