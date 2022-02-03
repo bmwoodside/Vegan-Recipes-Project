@@ -141,6 +141,7 @@ const RecipeForm = (props) => {
                             <button className='createBtn' onClick={handleAddIngredient}>Add</button>
                         </div>
                     </div>
+
                 </div>
 
             </form>
