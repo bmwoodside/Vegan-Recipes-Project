@@ -3,7 +3,8 @@ const { Recipe } = require('../models/recipe.model');
 
 // create new recipe
 module.exports.createRecipe = (req, res) => {
-    const { recipeName, recipeDescription, recipeIngredients, recipeInstructions, carbCount, proteinCount, fatCount, recipeLikes, recipeURL } = req.body;
+    const { recipeName, recipeDescription, recipeIngredients, recipeInstructions, carbCount, proteinCount, fatCount, recipeURL } = req.body;
+    const recipeLikes = 0;
     Recipe.create({
         recipeName,
         recipeDescription,
@@ -44,4 +45,10 @@ module.exports.deleteRecipe = (req, res) => {
     Recipe.deleteOne({ _id: req.params._id })
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch (err => res.json(err));
+}
+
+module.exports.upvoteRecipe = (req, res) => {
+    Recipe.findOneAndUpdate({_id:req.params._id}, {$inc: {recipeLikes:1}})
+    .then(likedRecipe => res.json({likedRecipe}))
+    .catch(err =>res.status(400).json({message:"that didnt quite work", err}));
 }

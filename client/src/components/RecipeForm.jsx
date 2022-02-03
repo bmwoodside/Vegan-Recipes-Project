@@ -121,12 +121,14 @@ const RecipeForm = (props) => {
                         </div>
 
 
+
                         <button className='createBtn'>Submit Recipe!</button>
                     </div>
 
 
                     <div className="form-col-input-right">
                     <p id='create-recipe-ingredients-header'>Ingredients:</p>
+
 
                     <ul>
                         {form.recipeIngredients.map((ingredient, i) =>
@@ -135,8 +137,12 @@ const RecipeForm = (props) => {
                     </ul>
 
                     <div className="create-recipe-ingredients">
+
                         <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
                         <button className='createBtn' onClick={handleAddIngredient}>Add</button>
+
+                       
+                         
                     </div>
                     
 
