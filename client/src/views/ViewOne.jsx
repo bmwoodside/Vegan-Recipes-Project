@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+
 import { useParams, Link, useHistory } from 'react-router-dom';
+
 import axios from 'axios';
 
 
@@ -30,7 +32,9 @@ const ViewOne = (props) => {
 
             const copyRecipes = {...view};
             copyRecipes.recipeLikes++;
+    
             setView(copyRecipes);
+
         })
         .catch(err=>console.log(err))
 

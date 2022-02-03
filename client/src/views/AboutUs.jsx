@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 const AboutUs = (props) => {
@@ -21,3 +22,4 @@ const AboutUs = (props) => {
 }
 
 export default AboutUs;
+
