@@ -22,7 +22,7 @@ module.exports.createRecipe = (req, res) => {
 
 // get all recipes
 module.exports.getAllRecipes = (req, res) => {
-    Recipe.find({})
+    Recipe.find({}).sort([['recipeLikes', -1]])
         .then(recipes => res.json(recipes))
         .catch(err => res.json(err));
 }

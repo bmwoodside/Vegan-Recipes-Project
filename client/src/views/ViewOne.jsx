@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -9,6 +9,7 @@ const ViewOne = (props) => {
         recipeIngredients: []
     });
     const {_id} = useParams();
+    const history = useHistory();
     
 
     useEffect (() => {
@@ -30,7 +31,9 @@ const ViewOne = (props) => {
 
             const copyRecipes = {...view};
             copyRecipes.recipeLikes++;
+    
             setView(copyRecipes);
+
         })
         .catch(err=>console.log(err))
         setDisableLikeButton(true);
