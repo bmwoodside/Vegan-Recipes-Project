@@ -94,6 +94,7 @@ const EditForm = (props) => {
                                 <input type="text" name='recipeName' className='input-label' value={form.recipeName} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} placeholder='(e.g.: Vegan Burritos!..)' />
                             </label>
                         </div>
+                    </div>
 
 
                 <div className='flex-create'>
