@@ -13,7 +13,7 @@ const Nav = (props) => {
                 <Link to={"/aboutus"} className='linkText'>About Us</Link>
             </div>
 
-            <div id='navbottom' />
+            {/* <div id='navbottom' /> */}
 
 
         </div>

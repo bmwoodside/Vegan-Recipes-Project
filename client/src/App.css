@@ -7,7 +7,7 @@ html, body {
   height:100%;
 }
 body {
-  background: linear-gradient(-45deg, #107050, #32d6a5cc, #2a8bdab6, #043d6bb6);
+  background: linear-gradient(-45deg, #1b8d67, #32d6a5da, #2a8bdab6, #043d6bcc);
   background-size: 400% 400%;
   animation: gradient 120s ease infinite;
 }
@@ -177,6 +177,7 @@ body {
 }
 
 
+/* about us page */
 
 
 
@@ -229,3 +230,76 @@ body {
     opacity: 0;
   }
 }
+
+
+/* main page header */
+
+
+
+#center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  color: white;
+  text-shadow: 3px 3px 7px #ffffff5d;
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+
+.mainTitle:first-of-type {   
+  animation: showup 15s infinite;
+}
+
+.mainTitle:last-of-type {
+  width:0px;
+  animation: reveal 15s infinite;
+}
+
+.mainTitle:last-of-type h3 {
+  margin-left:-355px;
+  animation: slidein 15s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:30px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:200px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:200px;}
+}
+
+
+.container{
+  border: black solid;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.leftBox{
+  /* border: pink solid; */
+  width: 20%;
+}
+
+.rightBox{
+  border: pink solid;
+  width: 80%;
+}
+
