@@ -95,6 +95,21 @@ const EditForm = (props) => {
                             </label>
                         </div>
 
+
+                <div className='flex-create'>
+                    <div className="form-col-input-left">
+                        <div className="create-name">
+                            <label htmlFor='recipeName' >
+                                <p className='create-labels'>Name: </p>
+                                {
+                                    nameError
+                                        ? <p style={{ color: "red" }}>{nameError}</p>
+                                        : null
+                                }
+                                <input type="text" name='recipeName' className='input-label' value={form.recipeName} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} placeholder='(e.g.: Vegan Burritos!..)' />
+                            </label>
+                        </div>
+
                         <div className="create-description">
                             <label htmlFor="recipeDescription">
                                 <p className='create-labels'>Description:</p>
@@ -118,6 +133,7 @@ const EditForm = (props) => {
                                 <textarea name='recipeInstructions' className='input-label' value={form.recipeInstructions} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }} placeholder='Write your instructions here!' />
                             </label>
                         </div>
+
 
                         <div className="create-macro-counts">
                             <div className="carbCount">
@@ -163,13 +179,16 @@ const EditForm = (props) => {
                                     ? <p style={{ color: "red" }}>{ingredientsError}</p>
                                     : null
                             }
-                            <input type="text" name="recipeIngredients" className="input-label" id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
-                            <button onClick={handleAddIngredient} className='createBtn'>Edit</button>
+
+                            <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
+                            <button className='createBtn' onClick={handleAddIngredient}>Add Ingredient</button>
+
                         </div>
 
 
                     </div>
                 </div>
+
 
 
             </form>
