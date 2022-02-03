@@ -163,7 +163,7 @@ const EditForm = (props) => {
                                 ? <p style={{ color: "red" }}>{ingredientsError}</p>
                                 : null
                         }
-                        <input type="text" name="recipeIngredients" id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
+                        <input type="text" name="recipeIngredients"  className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
                         <button onClick={handleAddIngredient}>Add Ingredient</button>
                     </div>
                     
