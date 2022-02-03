@@ -303,3 +303,30 @@ body {
   width: 80%;
 }
 
+.recipe > img{
+  height: 95%;
+  width: 45%
+}
+
+.recipe{
+  width: 400px;
+  height: 200px;
+  
+}
+
+.personContainer > img{
+  height: 25%;
+  width: 15%
+}
+
+.personContainer{
+  margin-left: 20px;
+}
+
+.oneRecipe > img{
+  height: 200px;
+  width: 45%;
+  border: 2px solid gray;
+}
+
+
