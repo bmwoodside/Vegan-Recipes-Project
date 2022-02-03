@@ -189,7 +189,7 @@ const EditForm = (props) => {
 
                     </div>
                 </div>
-
+            </div>
 
 
             </form>
