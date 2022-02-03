@@ -7,6 +7,7 @@ import Nav from './views/Nav';
 import RecipeForm from './components/RecipeForm';
 import ViewAllRecipes from "./views/ViewAllRecipes";
 import ViewOne from "./views/ViewOne";
+import EditForm from './components/EditForm';
 
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
 
         <Route exact path="/recipes/:_id">
           <ViewOne />
+        </Route>
+
+        <Route exact path="/recipes/:_id/edit">
+          <EditForm />
         </Route>
 
       </Switch>
