@@ -60,11 +60,13 @@ const ViewOne = (props) => {
                             <li key={i}>{ingredient}</li>
                         )}
                 </ul>
+
                 <p>Instructions: </p>
                 <p>{view.recipeInstructions}</p>
                 <p>carbs: {view.carbCount}g | protein: {view.proteinCount}g | fat: {view.fatCount}g</p>
 
                 <Link to={`/recipes/${_id}/edit`}><button className='createBtn'>Edit</button></Link> | <button className='deleteBtn' onClick={() => { onDeleteHandler(view._id) }}>Delete</button>
+
             </div>
 
 
