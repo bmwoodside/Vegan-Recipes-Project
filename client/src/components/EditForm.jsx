@@ -181,7 +181,7 @@ const EditForm = (props) => {
                             }
 
                             <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
-                            <button className='createBtn' onClick={handleAddIngredient}>Add Ingredient</button>
+                            <button className='createBtn' onClick={handleAddIngredient}>Edit Ingredient</button>
 
                         </div>
 
