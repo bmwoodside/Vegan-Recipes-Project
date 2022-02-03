@@ -13,6 +13,8 @@ const Main = (props) => {
 
             <Link to="/recipes/viewall"><button className="btn btn-success">Get Started!</button></Link>
 
+
+
         </div>
     )
 }

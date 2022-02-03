@@ -7,17 +7,17 @@ html, body {
   height:100%;
 }
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #107050, #32d6a5cc, #2a8bdab6, #043d6bb6);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 120s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+      background-position: 0% 100%;
   }
   50% {
-      background-position: 100% 50%;
+      background-position: 100% 100%;
   }
   100% {
       background-position: 0% 50%;
@@ -25,13 +25,17 @@ body {
 }
 
 .nav{
-  height: 70px;
+  height: 50px;
   width: 100%;
   border-radius:  0px 0px 25px 25px;
-  background: linear-gradient(135deg, #68d4ff 10%, rgb(36, 60, 129) 90%);
+  background: linear-gradient(135deg, #68d4ff7c 10%, rgba(36, 59, 129, 0.486) 90%);
+  /* background-size: 1000% 1000%;
+  animation: gradient 30s ease infinite; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 30px;
+
 }
 
 .recipe{
@@ -60,8 +64,168 @@ body {
 }
 
 .linkText:hover{
-  color:rgb(120,144,169)
+  color:rgb(197, 209, 221)
 
 }
 
+/* create recipe */
 
+.recipeForm{
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight:500;
+  color:white;
+  text-shadow: 2px 2px 2px #1401017e;
+  align-items: center;
+  border:  rgba(255, 255, 255, 0.637) groove 4px;
+  width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.flex-create{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-title{
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.486);
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+
+.create-labels{
+  margin-bottom: 5px;
+}
+
+#create-recipe-ingredients-header{
+  font-size: 30px;
+}
+
+
+.input-label{
+  margin-bottom: 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: rgb(88, 88, 88);
+}
+
+#carbCount{
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
+}
+#proteinCount{
+  width: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
+}
+#fatCount{
+  width: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.274);
+  border: white;
+  box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
+}
+
+
+.createBtn{
+  background: linear-gradient(115deg, #ffffff,#115fa88f );
+  border-radius: 5px;
+  border: white solid 1px; 
+  color: rgb(61, 61, 61);
+  box-shadow: rgba(0, 0, 0, 0.308) 5px 5px 10px;
+  padding: 7px;
+}
+
+
+
+#navbottom{
+  background-color: #39c4c975;
+  min-height: 25px;
+  width: 100%; 
+  bottom: 0;
+  position: fixed;
+  border-radius:  15px 15px 0px 0px;
+  overflow: hidden;
+}
+
+
+
+
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #D7D4E4;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #FFF ;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}

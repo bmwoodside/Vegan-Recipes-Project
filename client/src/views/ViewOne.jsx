@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+
+import { useParams, Link, useHistory } from 'react-router-dom';
+
 import axios from 'axios';
 
 
@@ -23,7 +25,6 @@ const ViewOne = (props) => {
 
     const onLikeHandler = (_id) => {
         console.log(_id);
-        // console.log(arrIndex);
 
         axios.patch(`http://localhost:8000/api/recipes/${_id}/upvote`)
         .then(res=>{
@@ -36,7 +37,17 @@ const ViewOne = (props) => {
 
         })
         .catch(err=>console.log(err))
+
         setDisableLikeButton(true);
+    }
+
+    const onDeleteHandler = (_id) => {
+        axios.delete(`http://localhost:8000/api/recipes/${_id}/delete`)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.error(err));
+        history.push("/recipes/viewall")
     }
 
 
@@ -46,13 +57,20 @@ const ViewOne = (props) => {
                 <h1>{view.recipeName}</h1>
                 <img src={view.recipeURL} alt={view.recipeURL} />
                 <h1><button className='btn btn-warning' onClick={()=>onLikeHandler(view._id)} disabled={disableLikeButton}>👍{view.recipeLikes}</button></h1>
+
+                <h4>Ingredients:</h4>
                 <ul>
                         {view.recipeIngredients.map((ingredient, i) =>
                             <li key={i}>{ingredient}</li>
                         )}
                 </ul>
-                <p>Instructions: {view.recipeInstructions}</p>
-                <p>carbs: {view.carbCount}g  protein: {view.proteinCount}g  fat: {view.fatCount}g</p>
+
+                <p>Instructions: </p>
+                <p>{view.recipeInstructions}</p>
+                <p>carbs: {view.carbCount}g | protein: {view.proteinCount}g | fat: {view.fatCount}g</p>
+
+                <Link to={`/recipes/${_id}/edit`}><button className='createBtn'>Edit</button></Link> | <button className='deleteBtn' onClick={() => { onDeleteHandler(view._id) }}>Delete</button>
+
             </div>
 
 
