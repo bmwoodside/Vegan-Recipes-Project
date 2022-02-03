@@ -45,7 +45,7 @@ const RecipeForm = (props) => {
 
     const handleAddIngredient = (e) => {
         e.preventDefault();
-        
+
         setForm({
             ...form,
             [form.recipeIngredients]: form.recipeIngredients.push(tempIngredient)
@@ -127,26 +127,20 @@ const RecipeForm = (props) => {
 
 
                     <div className="form-col-input-right">
-                    <p id='create-recipe-ingredients-header'>Ingredients:</p>
+                        <p id='create-recipe-ingredients-header'>Ingredients:</p>
 
+                        <ul>
+                            {form.recipeIngredients.map((ingredient, i) =>
+                                <li key={i}>{ingredient}</li>
+                            )}
+                        </ul>
 
-                    <ul>
-                        {form.recipeIngredients.map((ingredient, i) =>
-                            <li key={i}>{ingredient}</li>
-                        )}
-                    </ul>
-
-                    <div className="create-recipe-ingredients">
-
-                        <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
-                        <button className='createBtn' onClick={handleAddIngredient}>Add</button>
-
-                       
-                         
+                        <div className="create-recipe-ingredients">
+                            <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
+                            <button className='createBtn' onClick={handleAddIngredient}>Add</button>
+                        </div>
                     </div>
                     
-
-                </div>
                 </div>
 
             </form>
