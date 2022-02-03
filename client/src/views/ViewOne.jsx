@@ -26,6 +26,7 @@ const ViewOne = (props) => {
                 <p>Ingredients {view.recipeIngredients}</p>
                 <p>Instructions: {view.recipeInstructions}</p>
                 <p>carbs: {view.carbCount}g  protein: {view.proteinCount}g  fat: {view.fatCount}g</p>
+                <h1><button className='btn'>👍</button></h1>
             </div>
 
 

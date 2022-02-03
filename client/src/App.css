@@ -34,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 
 }
 
@@ -71,13 +71,33 @@ body {
 /* create recipe */
 
 .recipeForm{
-  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 20px;
   font-weight:500;
   color:white;
   text-shadow: 2px 2px 2px #1401017e;
   align-items: center;
+  border:  rgba(255, 255, 255, 0.637) groove 4px;
+  width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.flex-create{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-title{
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.486);
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  text-align: center;
+  justify-content: space-evenly;
 }
 
 
@@ -85,13 +105,20 @@ body {
   margin-bottom: 5px;
 }
 
+#create-recipe-ingredients-header{
+  font-size: 30px;
+}
+
 
 .input-label{
   margin-bottom: 20px;
+  margin-right: 15px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.274);
   border: white;
   box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: rgb(88, 88, 88);
 }
 
 #carbCount{
@@ -101,6 +128,8 @@ body {
   background-color: rgba(255, 255, 255, 0.274);
   border: white;
   box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
 }
 #proteinCount{
   width: 80px;
@@ -110,6 +139,8 @@ body {
   background-color: rgba(255, 255, 255, 0.274);
   border: white;
   box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
 }
 #fatCount{
   width: 80px;
@@ -119,27 +150,82 @@ body {
   background-color: rgba(255, 255, 255, 0.274);
   border: white;
   box-shadow: rgba(126, 126, 126, 0.226) 3px 3px 7px;
+  border: white solid 1px; 
+  color: white;
 }
 
 
 .createBtn{
-  background: linear-gradient(-45deg, #195f362f, #32d6a534);
+  background: linear-gradient(115deg, #ffffff,#115fa88f );
   border-radius: 5px;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.308) 3px 3px 7px;
-  padding: 5px;
+  border: white solid 1px; 
+  color: rgb(61, 61, 61);
+  box-shadow: rgba(0, 0, 0, 0.308) 5px 5px 10px;
+  padding: 7px;
 }
 
 
-.error{
-  color: red;
-}
 
 #navbottom{
-  background-color: #5a91c581;
+  background-color: #39c4c975;
   min-height: 25px;
   width: 100%; 
-  bottom: 0px;
+  bottom: 0;
   position: fixed;
   border-radius:  15px 15px 0px 0px;
+  overflow: hidden;
+}
+
+
+
+
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #D7D4E4;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #FFF ;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
 }

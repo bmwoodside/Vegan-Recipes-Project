@@ -8,6 +8,8 @@ const Main = (props) => {
 
             <Link to="/"><button className="btn btn-success">Get Started!</button></Link>
 
+
+
         </div>
     )
 }
