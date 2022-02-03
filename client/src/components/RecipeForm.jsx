@@ -129,6 +129,7 @@ const RecipeForm = (props) => {
                     <div className="form-col-input-right">
                         <p id='create-recipe-ingredients-header'>Ingredients:</p>
 
+
                         <ul>
                             {form.recipeIngredients.map((ingredient, i) =>
                                 <li key={i}>{ingredient}</li>
@@ -140,7 +141,7 @@ const RecipeForm = (props) => {
                             <button className='createBtn' onClick={handleAddIngredient}>Add</button>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </form>
