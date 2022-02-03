@@ -4,6 +4,7 @@ const Main = (props) => {
 
     return (
         <div>
+
             <div id="center">
                 <div className="mainTitle"><h1 id="vegan">Vegan Recipes </h1></div>
                 <div className="mainTitle">
@@ -12,6 +13,7 @@ const Main = (props) => {
             </div>
 
             <div>
+
 
             </div>
             <div className="container">
