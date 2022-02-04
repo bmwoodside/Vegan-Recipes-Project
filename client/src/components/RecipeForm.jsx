@@ -19,6 +19,7 @@ const RecipeForm = (props) => {
     const [nameError, setNameError] = useState("");
     const [descriptionError, setDescriptionError] = useState("");
     const [instructionsError, setInstructionsError] = useState("");
+    const [ingredientsError, setIngredientsError] = useState("");
 
     const history = useHistory();
 
@@ -51,6 +52,7 @@ const RecipeForm = (props) => {
             [form.recipeIngredients]: form.recipeIngredients.push(tempIngredient)
         })
         setTempIngredient("");
+        setIngredientsError("")
     }
 
     return (
@@ -122,7 +124,7 @@ const RecipeForm = (props) => {
 
 
 
-                        <button className='createBtn'>Submit Recipe!</button>
+                        <button className='createBtn' onClick={() => form.recipeIngredients.length < 1 ? setIngredientsError("Ingredients must have at least 1 item.") : setIngredientsError("")}>Submit Recipe!</button>
                     </div>
 
 
@@ -137,6 +139,12 @@ const RecipeForm = (props) => {
                         </ul>
 
                         <div className="create-recipe-ingredients">
+                            {
+                                ingredientsError
+                                    ? <p style={{ color: "darkred" }}>{ingredientsError}</p>
+                                    : null
+                            }
+                            
                             <input type="text" name="recipeIngredients" className='input-label' id="recipeIngredients" onChange={(e) => setTempIngredient(e.target.value)} value={tempIngredient} />
                             <button className='createBtn' onClick={handleAddIngredient}>Add</button>
                         </div>
