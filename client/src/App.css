@@ -25,7 +25,7 @@ body {
 }
 
 
-#errors{
+.errors{
   color: darkred;
   text-shadow: none;
 }
