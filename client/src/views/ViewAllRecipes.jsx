@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
+// import Logo from '../../public/static/imgs/logo512.png'
 
 
 const ViewAllRecipes = (props) => {
@@ -19,17 +20,25 @@ const ViewAllRecipes = (props) => {
 
     return (
         <div className='w-75 mx-auto mt-5'>
-            <Link to="/recipes/create" className='mb-5 btn btn-lg btn-success'>Add a recipe </Link>
+            <div className='mb-5'>
+            <Link to="/recipes/create" className='mb-5 createBtn3'>Add a recipe </Link>
+
+            </div>
 
             {
                 recipes.map((item, i) => {
                     return (
                     <div className=" mx-auto recipe">
-                            <img src={item.recipeURL} alt={item.recipeURL}></img>
-                            <h3>{item.recipeName}</h3>
-                            <p>Number of Likes: {item.recipeLikes}</p>
-                            <p>{item.recipeDescription}</p>
-                            <Link to={`/recipes/${item._id}`} className='btn btn-primary btn-lg'>View Recipe</Link>
+                            {
+                                item.recipeURL == ""
+                                ? <img src="../logo192.png" alt="" />
+                                : <img src={item.recipeURL} alt={item.recipeURL}></img>
+                            }
+                            
+                            <h2>{item.recipeName}</h2>
+                            <h3>Likes: {item.recipeLikes}</h3>
+                            <h4>{item.recipeDescription}</h4>
+                            <Link to={`/recipes/${item._id}`} className='createBtn2'>View Recipe</Link>
                     </div>
                     )
                 })
