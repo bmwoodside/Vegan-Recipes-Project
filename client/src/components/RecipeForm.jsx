@@ -67,10 +67,10 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Name: </p>
                                 {
                                     nameError
-                                        ? <p >{nameError}</p>
+                                        ? <p id='errors'>{nameError}</p>
                                         : null
                                 }
-                                <input type="text" name='recipeName' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} />
+                                <input type="text" name='recipeName' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }}  placeholder='(e.g.: Vegan Burritos!..)'/>
                             </label>
                         </div>
 
@@ -79,10 +79,10 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Description:</p>
                                 {
                                     descriptionError
-                                        ? <p >{descriptionError}</p>
+                                        ? <p id='errors'>{descriptionError}</p>
                                         : null
                                 }
-                                <textarea name='recipeDescription' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError(""); }} />
+                                <textarea name='recipeDescription' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError(""); }} placeholder='Tell us an appetizing description!' />
                             </label>
                         </div>
 
@@ -91,10 +91,10 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Instructions:</p>
                                 {
                                     instructionsError
-                                        ? <p >{instructionsError}</p>
+                                        ? <p id='errors'>{instructionsError}</p>
                                         : null
                                 }
-                                <textarea name='recipeInstructions' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }} />
+                                <textarea name='recipeInstructions' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }}  placeholder='Write your instructions here!'/>
                             </label>
                         </div>
 
@@ -116,7 +116,7 @@ const RecipeForm = (props) => {
                         <div className="create-recipeURL">
                             <label htmlFor='recipeURL'>
                                 <p className='create-labels'>Link to a picture! (optional):</p>
-                                <input type="text" name="recipeURL" className='input-label' id="recipeURL" onChange={(e) => onChangeHandler(e)} />
+                                <input type="text" name="recipeURL" className='input-label' id="recipeURL" onChange={(e) => onChangeHandler(e)}  placeholder='e.g.: www.google.com'/>
                             </label>
                         </div>
 
