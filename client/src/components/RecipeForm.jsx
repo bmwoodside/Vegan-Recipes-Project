@@ -67,7 +67,7 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Name: </p>
                                 {
                                     nameError
-                                        ? <p id='errors'>{nameError}</p>
+                                        ? <p className='errors'>{nameError}</p>
                                         : null
                                 }
                                 <input type="text" name='recipeName' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }}  placeholder='(e.g.: Vegan Burritos!..)'/>
@@ -79,7 +79,7 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Description:</p>
                                 {
                                     descriptionError
-                                        ? <p id='errors'>{descriptionError}</p>
+                                        ? <p className='errors'>{descriptionError}</p>
                                         : null
                                 }
                                 <textarea name='recipeDescription' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError(""); }} placeholder='Tell us an appetizing description!' />
@@ -91,7 +91,7 @@ const RecipeForm = (props) => {
                                 <p className='create-labels'>Instructions:</p>
                                 {
                                     instructionsError
-                                        ? <p id='errors'>{instructionsError}</p>
+                                        ? <p className='errors'>{instructionsError}</p>
                                         : null
                                 }
                                 <textarea name='recipeInstructions' className='input-label' onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }}  placeholder='Write your instructions here!'/>
