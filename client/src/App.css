@@ -24,6 +24,12 @@ body {
   }
 }
 
+
+#errors{
+  color: darkred;
+  text-shadow: none;
+}
+
 .nav{
   height: 50px;
   width: 100%;
@@ -258,6 +264,13 @@ body {
 /* main page header */
 
 
+.videoMain{
+border-radius: 25px;
+/* -moz-box-shadow: 2px 2px 5px #888;
+-webkit-box-shadow: 2px 2px 5px #888; */
+box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.623);
+} 
+
 
 #center{
   text-align: center;
@@ -315,6 +328,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 3000px
 
 }
 
@@ -328,23 +342,30 @@ body {
 
 }
 
+#veganPic{
+  margin-top: 30px;
+width: 50%; 
+} 
+
 
 .topBox{
-  background-color: rgba(255, 255, 255, 0.295);
+  background-color: rgba(255, 255, 255, 0.199);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
   padding: 15px;
   margin-bottom: 30px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .bottomBox{
   align-items: center;
+  color: white;
   text-align:center;
-  background-color: rgba(255, 255, 255, 0.295);
+  background-color: rgba(255, 255, 255, 0);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
-  border-radius: 5px;
-  min-height: 200px;
+  border-radius: 15px;
+  min-height: 300px;
   padding: 5px;
   padding-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.425);
 }
 
 
@@ -360,26 +381,27 @@ body {
 
 #flip > div > div {
   color:#fff;
-  padding:4px 8px 10px;
+  padding:2px 5px 10px;
   height:55px;
-  margin-bottom:45px;
+  margin-bottom:50px;
   display:inline-block;
 }
 
 #flip div:first-child {
   animation: show 10s linear infinite;
+  font-size: 30px;
 }
 
 #flip div div {
-  background:#42cfb8;
-  border-radius: 3px;
+  background:#d439ccbe;
+  border-radius: 7px;
 }
 #flip div:first-child div {
-  background:#2fa3b3;
+  background:#2fa4b3be;
   border-radius: 3px;
 }
 #flip div:last-child div {
-  background:#2db4b4;
+  background:#24f0ced2;
   border-radius: 3px;
 }
 
@@ -471,9 +493,20 @@ body {
   border: 2px solid gray;
 }
 
+
+.deleteBtn{
+  background: linear-gradient(115deg, #ffffff,#b82f74cb );
+  border-radius: 5px;
+  border: white solid 1px; 
+  color: rgb(61, 61, 61);
+  box-shadow: rgba(0, 0, 0, 0.308) 5px 5px 10px;
+  padding: 7px;
+}
+
 .ingredientsDelete{
   margin-left: 10px;
 }
+
 
 
 
