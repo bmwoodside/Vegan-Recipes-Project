@@ -82,7 +82,7 @@ const EditForm = (props) => {
             <form onSubmit={onSubmitHandler} className="recipeForm">
                 <div className="flex-create">
 
-                    <div className="form-col-input-left">
+                    {/* <div className="form-col-input-left">
                         <div className="create-name">
                             <label htmlFor='recipeName' >
                                 <p className='create-labels'>Name: </p>
@@ -94,7 +94,7 @@ const EditForm = (props) => {
                                 <input type="text" name='recipeName' className='input-label' value={form.recipeName} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} placeholder='(e.g.: Vegan Burritos!..)' />
                             </label>
                         </div>
-                    </div>
+                    </div> */}
 
 
                 <div className='flex-create'>
@@ -104,7 +104,7 @@ const EditForm = (props) => {
                                 <p className='create-labels'>Name: </p>
                                 {
                                     nameError
-                                        ? <p style={{ color: "red" }}>{nameError}</p>
+                                        ? <p style={{ color: "darkred" }}>{nameError}</p>
                                         : null
                                 }
                                 <input type="text" name='recipeName' className='input-label' value={form.recipeName} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setNameError("Recipe name must be at least 3 characters.") : setNameError(""); }} placeholder='(e.g.: Vegan Burritos!..)' />
@@ -116,7 +116,7 @@ const EditForm = (props) => {
                                 <p className='create-labels'>Description:</p>
                                 {
                                     descriptionError
-                                        ? <p style={{ color: "red" }}>{descriptionError}</p>
+                                        ? <p style={{ color: "darkred" }}>{descriptionError}</p>
                                         : null
                                 }
                                 <textarea name='recipeDescription' className='input-label' value={form.recipeDescription} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setDescriptionError("Description must be at least 3 characters.") : setDescriptionError(""); }} placeholder='Tell us an appetizing description!' />
@@ -128,7 +128,7 @@ const EditForm = (props) => {
                                 <p className='create-labels'>Instructions:</p>
                                 {
                                     instructionsError
-                                        ? <p style={{ color: "red" }}>{instructionsError}</p>
+                                        ? <p style={{ color: "darkred" }}>{instructionsError}</p>
                                         : null
                                 }
                                 <textarea name='recipeInstructions' className='input-label' value={form.recipeInstructions} onChange={(e) => { onChangeHandler(e); e.target.value.length < 3 ? setInstructionsError("Instructions must be at least 3 characters.") : setInstructionsError(""); }} placeholder='Write your instructions here!' />
@@ -165,11 +165,11 @@ const EditForm = (props) => {
                     <div className="form-col-input-right">
                         <h3 id='create-recipe-ingredients-header'>Ingredients:</h3>
 
-                        <ul>
+                        <ul >
                             {form.recipeIngredients.map((ingredient, i) =>
-                                <li key={i}>
+                                <li key={i} >
                                     {ingredient}
-                                    <button className='btn btn-danger' onClick={(e) => ingredientDeleteHandler(e, i)}>Remove</button>
+                                    <button className='btn btn-sm btn-danger ingredientsDelete' onClick={(e) => ingredientDeleteHandler(e, i)}>X</button>
                                 </li>
                             )}
                         </ul>
