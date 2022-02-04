@@ -10,7 +10,6 @@ import ViewOne from "./views/ViewOne";
 import AboutUs from './views/AboutUs';
 import EditForm from './components/EditForm';
 
-
 function App() {
   return (
     <BrowserRouter>
