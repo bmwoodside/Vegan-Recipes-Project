@@ -57,7 +57,7 @@ const ViewOne = (props) => {
                 <h1>{view.recipeName}</h1>
                 {
                     view.recipeURL == ""
-                        ? <img src="../logo192.png" alt="" />
+                        ? <img src="../stockPhoto.jpg" alt="" />
                         : <img src={view.recipeURL} alt={view.recipeURL}></img>
                 }
                 <h1><button className='btn btn-warning' onClick={()=>onLikeHandler(view._id)} disabled={disableLikeButton}>👍{view.recipeLikes}</button></h1>

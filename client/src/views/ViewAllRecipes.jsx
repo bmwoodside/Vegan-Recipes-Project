@@ -31,7 +31,7 @@ const ViewAllRecipes = (props) => {
                     <div className=" mx-auto recipe">
                             {
                                 item.recipeURL == ""
-                                ? <img src="../logo192.png" alt="" />
+                                ? <img src="../stockPhoto.jpg" alt="" />
                                 : <img src={item.recipeURL} alt={item.recipeURL}></img>
                             }
                             
